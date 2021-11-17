@@ -16,8 +16,8 @@ public class HotelClientImpl {
     public HotelClientImpl() throws RemoteException {
     }
 
-    public void startClient() throws RemoteException, NotBoundException {
-        Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+    public void startClient(String address) throws RemoteException, NotBoundException {
+        Registry registry = LocateRegistry.getRegistry(address, 1099);
         server = (IHotelServer) registry.lookup("Server");
     }
 

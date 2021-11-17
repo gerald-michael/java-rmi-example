@@ -10,12 +10,18 @@ public class HotelClient {
     public static void main(String[] args) throws RemoteException, NotBoundException {
 
         HotelClientImpl client = new HotelClientImpl();
-        client.startClient();
         if (args.length == 0) {
             System.out.println("Usage: ");
             return;
         }
-        if (args[0].equals("list")) {
+        try {
+            client.startClient(args[0]);
+        } catch (Exception e) {
+            System.out.println("Can't connect to " + args[0]);
+            return;
+        }
+
+        if (args[1].equals("list")) {
             System.out.println("List: ");
             HashMap<shared.Type, Integer> list = client.list();
             System.out.println(list.get(shared.Type.TYPE0) + " rooms of type 0 are available for 55,000 UGX per night");
@@ -27,13 +33,13 @@ public class HotelClient {
                     .println(list.get(shared.Type.TYPE4) + " rooms of type 4 are available for 230,000 UGX per night");
         }
 
-        if (args[0].equals("book")) {
+        if (args[1].equals("book")) {
             try {
                 int type;
                 boolean result;
                 try {
-                    type = Integer.parseInt(args[1]);
-                    String name = args[2];
+                    type = Integer.parseInt(args[2]);
+                    String name = args[3];
                     switch (type) {
                     case 0:
                         result = client.book(name, shared.Type.TYPE0);
@@ -66,13 +72,13 @@ public class HotelClient {
             }
         }
 
-        if (args[0].equals("guests")) {
+        if (args[1].equals("guests")) {
             ArrayList<String> guests = client.guests();
             System.out.println("Guests: ");
             guests.forEach(guest -> System.out.println(guest));
         }
 
-        if (args[0].equals("revenue")) {
+        if (args[1].equals("revenue")) {
             System.out.println("Revenue: " + client.revenue());
         }
     }

@@ -12,6 +12,10 @@ public class HotelClient {
         HotelClientImpl client = new HotelClientImpl();
         if (args.length == 0) {
             System.out.println("Usage: ");
+            System.out.println("list <server address>");
+            System.out.println("book <server address> <room type> <guest name>");
+            System.out.println("guests <server address>");
+            System.out.println("guests <server address>");
             return;
         }
         try {

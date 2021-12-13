@@ -15,7 +15,7 @@ public class DataStorage {
         public static HashMap<Integer, Room> bookedRooms = new HashMap<Integer,Room>();
         
         // return data for available rooms 
-        public HashMap<Integer, Room>getRoomsData(){
+        public HashMap<Integer, Room>getRoomsData(){ 
             return roomsData;
         }
         //set the default data for rooms

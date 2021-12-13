@@ -7,17 +7,17 @@ public class HotelClient {
     public static void main (String [] args) {
         // no arguments supplied
         if (args.length==0) {
-            System.out.println("**************Welcome to Our hotel************ ,\n Use the commands below to do anything you feel like\n");
-            System.out.println("\n\n\t java HotelClient list <server address>: list the available number of rooms in each price");
-            System.out.println("\n\n \t java HotelClient book <server address> <room type> <guest name>: books a \n" +
-                    "room of the specified type (if available)\n");
-            System.out.println("\n\n \t java HotelClient guests <server address>: list the names of all the registered guests");
-            System.out.println("\n\n\t java HotelClient revenue <server address>: prints the revenue breakdown based on \n"+
-            "the booked rooms and their types.");
+            System.out.println("\n\t**************Welcome to Our hotel************ \n \tType any of these commands below to recieve a service.");
+            System.out.println("\n\t java HotelClient list <server address>: list the available number of rooms in each price.");
+            System.out.println("\n\t java HotelClient book <server address> <room type> <guest name>: books a room of the " +
+"specified type (if available).");
+            System.out.println("\n\t java HotelClient guests <server address>: list the names of all the registered guests.");
+            System.out.println("\n\t java HotelClient revenue <server address>: prints the revenue breakdown based on the booked"+
+            "rooms and their types.");
         } else {
            
             try {
-                RoomManager c = null;
+                RoomManager c = null; 
                 // display lists
                 if (args[0].equals("list") && args.length==2) {
                     String serverAddress=args[1].toString();

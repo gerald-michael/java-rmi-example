@@ -14,7 +14,7 @@ import java.util.Map;
 public class RoomManagerImpl extends java.rmi.server.UnicastRemoteObject implements RoomManager{
     public RoomManagerImpl() throws RemoteException {
         super();
-    }
+    }            
 
     @Override
     public ArrayList<Room> getAvailableRooms() throws RemoteException  {

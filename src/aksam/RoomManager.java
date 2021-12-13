@@ -10,7 +10,7 @@ import java.util.ArrayList;
 *
  ***/
 
-public interface RoomManager  extends Remote {
+public interface RoomManager  extends Remote { 
 
     /***
      * list all the available rooms

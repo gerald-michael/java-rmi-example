@@ -5,7 +5,7 @@ import java.rmi.Naming;
  * Class HotelServer to handle Server Logic to which the client will pass the massage
  */
 public class HotelServer {
-    public HotelServer() {
+    public HotelServer() { 
         try {
 
             RoomManager r = new RoomManagerImpl();
